@@ -23,7 +23,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 // })->middleware('auth:sanctum');
 
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth:sanctum')->prefix('v1')->group(function () {
     Route::get('/profile/{id}', [ProfileController::class, 'index']);
     Route::apiResource('clients', ClientController::class);
     Route::apiResource('projects', ProjectController::class);
