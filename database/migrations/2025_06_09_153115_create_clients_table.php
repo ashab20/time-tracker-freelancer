@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
+            $table->string('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
